@@ -38,19 +38,19 @@ always@(posedge clk_i, posedge rst_i) begin
       timer <= timer + 1; //counter 
       case(state)
          S1: begin
-            if(timer == green - 1) begin //(
+            if(timer == green - 1) begin 
                state <= S2;
                timer <= 6'b0;
             end
          end //S1
          S2: begin
-            if(timer == yellow - 1) begin //(so extra 1s is granted)
+            if(timer == yellow - 1) begin 
                state <= S3;
                timer <= 6'b0;
             end
          end //S2
          S3: begin
-            if(timer == green - 1) begin //(so n-1 timing used)
+            if(timer == green - 1) begin 
                state <= S4;
                timer <= 6'b0;
             end
